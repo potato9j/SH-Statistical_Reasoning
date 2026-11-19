@@ -26,17 +26,20 @@ R로 2025년 서울 지하철 승차 인원과 날씨의 관계를 시간대별�
 
 ## 파이프라인
 
-```mermaid
-flowchart LR
-    A[dataset/raw<br>원자료] --> B[notebooks/04<br>전처리]
-    B --> C[subway_clean.csv]
-    C --> D[01 긴 형식]
-    D --> E[02 시각 추출]
-    E --> F[03 시간대 곡선]
-    F --> G[04 날씨 조인<br>증감률]
-    G --> H[05 낮 시간대 판단]
-    H --> I[06 공휴일 반영]
-    I --> J[07 한계 검증]
+```
+원자료 (dataset/raw)
+  │  notebooks/04 전처리
+  ▼
+subway_clean.csv (dataset/working)
+  │
+  ▼
+01 긴 형식 ──▶ 02 시각 추출 ──▶ 03 시간대 곡선
+  │
+  ▼
+04 날씨 조인·증감률 ──▶ 05 낮 시간대 판단
+  │
+  ▼
+06 공휴일 반영 ──▶ 07 한계 검증
 ```
 
 | 단계 | 파일 (`midterm_exam/code/`) | 하는 일 | 결과 |

@@ -1,7 +1,7 @@
 [project]
 name = "readtheworld"
 version = "0.1.0"
-description = "Add your description here"
+description = "R로 2025년 서울 지하철 승차 인원과 날씨의 관계를 시간대별로 분석한 과제"
 readme = "README.md"
 authors = [
     { name = "potato9j" }
